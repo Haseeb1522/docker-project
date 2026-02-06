@@ -1,0 +1,13 @@
+name: Deploy Login Page using Docker
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 1️⃣ Get Code
+        uses: actions/checkout@v4
