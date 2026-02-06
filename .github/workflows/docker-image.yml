@@ -11,3 +11,12 @@ jobs:
     steps:
       - name: 1️⃣ Get Code
         uses: actions/checkout@v4
+       - name: 2️⃣ Login to DockerHub
+       run: echo "${{ secrets.DOCKER_TOKEN }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin 
+      - name: 3️⃣ Build Docker Image
+        run: docker build -t Haseeb1522/docker-project:latest .
+
+      - name: 4️⃣ Push Image to DockerHub
+        run: docker push Haseeb1522/docker-project:latest
+
+                
